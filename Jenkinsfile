@@ -16,7 +16,7 @@ node {
         checkout scm
         sh "curl -L https://github.com/docker/compose/releases/download/1.25.0-rc1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose"
         sh "chmod +x /usr/local/bin/docker-compose"
-        sh "docker-compose -f docker-compose.yml up --build"
+        sh "docker-compose -f docker-compose.yml up -d --build"
     }
 
     stage('Build'){
