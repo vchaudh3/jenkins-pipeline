@@ -6,6 +6,8 @@ services:
     ports:
       - 9000:9000
       - 9092:9092
+    networks:
+      - bridge
     container_name: sonarqube
   jenkins:
     build:
@@ -15,6 +17,8 @@ services:
     ports:
       - 8081:8081
       - 50000:50000
+    networks:
+      - bridge
     container_name: jenkins
     volumes:
       - /tmp/jenkins:/var/jenkins_home #Remember that, the tmp directory is designed to be wiped on system reboot.
