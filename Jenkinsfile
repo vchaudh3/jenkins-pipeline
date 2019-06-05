@@ -14,6 +14,7 @@ node {
 
     stage('Checkout') {
         checkout scm
+        sh "docker-compose -f docker-compose.yml up --build"
     }
 
     stage('Build'){
